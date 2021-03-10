@@ -10,10 +10,9 @@
 
   <div>
     <div class="form inline">
-      <form>
+      <form method="POST" action="solve.html">
         <h1><u>Sign up to solve</u></h1>
         <label for="username">Choose a username: </label>
-        <!-- ^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$ -->
         <input type="text" id="username" placeholder="Username" pattern="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$" required><br><br>
         <label for="pwd">Create a password: </label>
         <input type="password" id="pwd" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required><br><br>
