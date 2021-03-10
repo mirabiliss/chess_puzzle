@@ -5,30 +5,67 @@ body {
   overflow-anchor: none;
 }
 
-form {
-  margin-top: 15%;
+.form {
   margin-left: 15%;
+  margin-right: 10%;
 }
 
-input {
-  width: 25%;
-  height: 40px;
-  font-size: large;
+input, textarea {
+  font-size: x-large;
   margin-bottom: 10px;
+  width: 85%;
+  background-color: #666562;
+  color: white;
+}
+
+select, option {
+  font-size: x-large;
+  background-color: #666562;
+  color: white;
+}
+
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -7px;
+  left: -1;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked:after {
+  background-color: #e6912c;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+label {
+  font-size: x-large;
+}
+
+.rdbutton {
+  width: 5%;
 }
 
 button {
   background-color: #e6912c;
   border: none;
   color: white;
-  padding: 13px 32px;
+  padding: 13px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
   border-radius: 8px;
   transition-duration: 0.4s;
-  margin-left: 10%;
+  margin-left: 33%;
 }
 
 button:hover {
@@ -40,10 +77,6 @@ button:hover {
 table {
   width: 696px;
   height: 696px;
-  margin-left: auto;
-  margin-right: 15%;
-  margin-top: -22%;
-  margin-bottom: 4%;
 }
 
 .dark {
@@ -64,15 +97,26 @@ table {
 
 th {
   text-align: left;
+  vertical-align: top;
+}
+
+.col {
+  text-align: right;
   vertical-align: bottom;
 }
 
+
 #links {
-  text-align: center;  
+  text-align: center;
+  margin-top: 7%;
 }
 
 a {
   color: white;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .sq-11 {
