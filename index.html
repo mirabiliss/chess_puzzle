@@ -1,117 +1,156 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Lab1</title>
+  <title>Chess puzzle №29032</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- input fields -->
-  <form>
-    <h2>Log in</h2>
-    <input type="text" placeholder="Username"><br>
-    <input type="password" placeholder="Password"><br>
-    <button type="submit">Ok</button>
-  </form>
+  <div>
+    <div class="form inline">
+      <form>
+        <h1><u>Sign up to solve</u></h1>
+        <label for="username">Choose a username: </label>
+        <!-- ^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$ -->
+        <input type="text" id="username" placeholder="Username" pattern="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$" required><br><br>
+        <label for="pwd">Create a password: </label>
+        <input type="password" id="pwd" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required><br><br>
 
-  <!-- board -->
-  <table>
-    <thead>
-      <caption><h2>Problem №29032</h2></caption>
-    </thead>
-    <tbody>
-      <!-- 8 -->
-      <tr>
-        <th class="light piece sq-81" scope="row">8</th>
-        <td class="dark piece sq-82"></td>
-        <td class="light piece sq-83"></td>
-        <td class="dark piece sq-84"></td>
-        <td class="light piece sq-85"></td>
-        <td class="dark piece sq-86"></td>
-        <td class="light piece sq-87"></td>
-        <th class="dark piece sq-88"></th>
-      </tr>
-      <!-- 7 -->
-      <tr>
-        <th class="dark piece sq-71" scope="row">7</th>
-        <td class="light piece sq-72"></td>
-        <td class="dark piece sq-73"></td>
-        <td class="light piece sq-74"></td>
-        <td class="dark piece sq-75"></td>
-        <td class="light piece sq-76"></td>
-        <td class="dark piece sq-77"></td>
-        <th class="light piece sq-78"></th>
-      </tr>
-      <!-- 6 -->
-      <tr>
-        <th class="light piece sq-61" scope="row">6</th>
-        <td class="dark piece sq-62"></td>
-        <td class="light piece sq-63"></td>
-        <td class="dark piece sq-64"></td>
-        <td class="light piece sq-65"></td>
-        <td class="dark piece sq-66"></td>
-        <td class="light piece sq-67"></td>
-        <th class="dark piece sq-68"></th>
-      </tr>
-      <!-- 5 -->
-      <tr>
-        <th class="dark piece sq-51" scope="row">5</th>
-        <td class="light piece sq-52"></td>
-        <td class="dark piece sq-53"></td>
-        <td class="light piece sq-54"></td>
-        <td class="dark piece sq-55"></td>
-        <td class="light piece sq-56"></td>
-        <td class="dark piece sq-57"></td>
-        <th class="light piece sq-58"></th>
-      </tr>
-      <!-- 4 -->
-      <tr>
-        <th class="light piece sq-41" scope="row">4</th>
-        <td class="dark piece sq-42"></td>
-        <td class="light piece sq-43"></td>
-        <td class="dark piece sq-44"></td>
-        <td class="light piece sq-45"></td>
-        <td class="dark piece sq-46"></td>
-        <td class="light piece sq-47"></td>
-        <th class="dark piece sq-48"></th>
-      </tr>
-      <!-- 3 -->
-      <tr>
-        <th class="dark piece sq-31" scope="row">3</th>
-        <td class="light piece sq-32"></td>
-        <td class="dark piece sq-33"></td>
-        <td class="light piece sq-34"></td>
-        <td class="dark piece sq-35"></td>
-        <td class="light piece sq-36"></td>
-        <td class="dark piece sq-37"></td>
-        <th class="light piece sq-38"></th>
-      </tr>
-      <!-- 2 -->
-      <tr>
-        <th class="light piece sq-21" scope="row">2</th>
-        <td class="dark piece sq-22"></td>
-        <td class="light piece sq-23"></td>
-        <td class="dark piece sq-24"></td>
-        <td class="light piece sq-25"></td>
-        <td class="dark piece sq-26"></td>
-        <td class="light piece sq-27"></td>
-        <th class="dark piece sq-28"></th>
-      </tr>
-      <!-- 1 -->
-      <tr class="col">
-        <th class="dark piece sq-11" scope="row">1  a</th>
-        <th class="light piece sq-12">b</th>
-        <th class="dark piece sq-13">c</th>
-        <th class="light piece sq-14">d</th>
-        <th class="dark piece sq-15">e</th>
-        <th class="light piece sq-16">f</th>
-        <th class="dark piece sq-17">g</th>
-        <th class="light piece sq-18">h</th>
-      </tr>
-    </tbody>
-  </table>
+        <label for="experience">Have you played chess before?</label><br>
+        <input name="experience" type="radio" id="yes" value="yes" class="rdbutton" checked required>
+        <label for="yes" class="rdbutton">Yes &emsp;&emsp;&emsp;</label>
+        <input name="experience" type="radio" id="no" value="no" class="rdbutton">
+        <label for="no" class="rdbutton">No</label><br><br>
 
-  <!-- links -->
+        <label for="level">What is your level?&nbsp; &nbsp;</label>
+        <select id="level" name="level" required>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="pro">Pro</option>
+        </select><br><br>
+
+        <label for="country">Where are you from?</label>
+        <input type="text" list="countries" id="country" name="country" required>
+        <datalist id="countries">
+          <option value="Ukraine">Ukraine</option>
+          <option value="USA">USA</option>
+          <option value="Germany">Germany</option>
+          <option value="Poland">Poland</option>
+          <option value="Italy">Italy</option>
+          <option value="England">England</option>
+          <option value="France">France</option>
+        </datalist><br><br>
+
+        <label for="suggestions" style="font-size: large;">Any wishes?</label><br>
+        <textarea id="suggestions" name="suggestions" rows="5"></textarea><br>
+        <input type="hidden" name="puzzleno" value="29032">
+        <button type="submit" onclick="reaction(this, '#769656')">Ok</button>
+        <script>
+          function reaction(el, col) {
+            el.style.backgroundColor = col;
+          }
+        </script>
+        <br>
+        <br>
+      </form>
+    </div>
+
+    <div class="table inline">
+      <table>
+        <thead>
+          <caption>
+            <h2>Problem №29032</h2>
+          </caption>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="light piece sq-81" scope="row">8</th>
+            <td class="dark piece sq-82"></td>
+            <td class="light piece sq-83"></td>
+            <td class="dark piece sq-84"></td>
+            <td class="light piece sq-85"></td>
+            <td class="dark piece sq-86"></td>
+            <td class="light piece sq-87"></td>
+            <th class="dark piece sq-88"></th>
+          </tr>
+          <tr>
+            <th class="dark piece sq-71" scope="row">7</th>
+            <td class="light piece sq-72"></td>
+            <td class="dark piece sq-73"></td>
+            <td class="light piece sq-74"></td>
+            <td class="dark piece sq-75"></td>
+            <td class="light piece sq-76"></td>
+            <td class="dark piece sq-77"></td>
+            <th class="light piece sq-78"></th>
+          </tr>
+          <tr>
+            <th class="light piece sq-61" scope="row">6</th>
+            <td class="dark piece sq-62"></td>
+            <td class="light piece sq-63"></td>
+            <td class="dark piece sq-64"></td>
+            <td class="light piece sq-65"></td>
+            <td class="dark piece sq-66"></td>
+            <td class="light piece sq-67"></td>
+            <th class="dark piece sq-68"></th>
+          </tr>
+          <tr>
+            <th class="dark piece sq-51" scope="row">5</th>
+            <td class="light piece sq-52"></td>
+            <td class="dark piece sq-53"></td>
+            <td class="light piece sq-54"></td>
+            <td class="dark piece sq-55"></td>
+            <td class="light piece sq-56"></td>
+            <td class="dark piece sq-57"></td>
+            <th class="light piece sq-58"></th>
+          </tr>
+          <tr>
+            <th class="light piece sq-41" scope="row">4</th>
+            <td class="dark piece sq-42"></td>
+            <td class="light piece sq-43"></td>
+            <td class="dark piece sq-44"></td>
+            <td class="light piece sq-45"></td>
+            <td class="dark piece sq-46"></td>
+            <td class="light piece sq-47"></td>
+            <th class="dark piece sq-48"></th>
+          </tr>
+          <tr>
+            <th class="dark piece sq-31" scope="row">3</th>
+            <td class="light piece sq-32"></td>
+            <td class="dark piece sq-33"></td>
+            <td class="light piece sq-34"></td>
+            <td class="dark piece sq-35"></td>
+            <td class="light piece sq-36"></td>
+            <td class="dark piece sq-37"></td>
+            <th class="light piece sq-38"></th>
+          </tr>
+          <tr>
+            <th class="light piece sq-21" scope="row">2</th>
+            <td class="dark piece sq-22"></td>
+            <td class="light piece sq-23"></td>
+            <td class="dark piece sq-24"></td>
+            <td class="light piece sq-25"></td>
+            <td class="dark piece sq-26"></td>
+            <td class="light piece sq-27"></td>
+            <th class="dark piece sq-28"></th>
+          </tr>
+          <tr>
+            <th class="dark piece sq-11" scope="row">1<br><br><br><br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+              &nbsp a</th>
+            <th class="light piece sq-12 col">b</th>
+            <th class="dark piece sq-13 col">c</th>
+            <th class="light piece sq-14 col">d</th>
+            <th class="dark piece sq-15 col">e</th>
+            <th class="light piece sq-16 col">f</th>
+            <th class="dark piece sq-17 col">g</th>
+            <th class="light piece sq-18 col">h</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <div id="links">
     <a href="https://www.chess.com/puzzles/problem/29032" target="_blank">Go to Puzzle</a>
     <a href="https://www.chess.com/learn-how-to-play-chess" target="_blank">How to play chess</a><br>
