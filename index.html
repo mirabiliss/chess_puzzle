@@ -13,7 +13,6 @@
       <form>
         <h1><u>Sign up to solve</u></h1>
         <label for="username">Choose a username: </label>
-        <!-- ^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$ -->
         <input type="text" id="username" placeholder="Username" pattern="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$" required><br><br>
         <label for="pwd">Create a password: </label>
         <input type="password" id="pwd" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required><br><br>
@@ -46,7 +45,7 @@
         <label for="suggestions" style="font-size: large;">Any wishes?</label><br>
         <textarea id="suggestions" name="suggestions" rows="5"></textarea><br>
         <input type="hidden" name="puzzleno" value="29032">
-        <button type="submit" onclick="reaction(this, '#769656')">Ok</button>
+        <button type="submit" onsubmit="reaction(this, '#769656')">Ok</button>
         <script>
           function reaction(el, col) {
             el.style.backgroundColor = col;
