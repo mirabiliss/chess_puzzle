@@ -8,7 +8,7 @@
 
 <body>
 
-  <div>
+  <div class="flex">
     <div class="form inline">
       <form onsubmit="return(validate());"> <!-- method="POST" action="solve.html" -->
         <h1><u>Sign up to solve</u></h1>
@@ -45,14 +45,13 @@
         <label for="suggestions" style="font-size: large;">Any wishes?</label><br>
         <textarea id="suggestions" name="suggestions" rows="5"></textarea><br>
         <input type="hidden" name="puzzleno" value="29032">
-        <button type="submit">Ok</button>
+        <button type="submit" id="sb">Ok</button>
         <script>
           function reaction(el, col) {
             el.style.backgroundColor = col;
           }
         </script>
-        <br>
-        <br>
+
       </form>
     </div>
 
@@ -147,16 +146,28 @@
           </tr>
         </tbody>
       </table>
+
+      <div>
+        <br>
+        <button class="submit button timer" id="button" onclick="startTimer(600, document.querySelector('#time'))">Start</button>
+        <div class="timer" id="time"></div>
+      </div>
+      
     </div>
   </div>
 
-  <div id="links">
-    <a href="https://www.chess.com/puzzles/problem/29032" target="_blank">Go to Puzzle</a>
-    <a href="https://www.chess.com/learn-how-to-play-chess" target="_blank">How to play chess</a><br>
+  <div class="flex">
+    <div id="links">
+      <a href="https://www.chess.com/puzzles/problem/29032" target="_blank">Go to Puzzle</a>
+      <a href="https://www.chess.com/learn-how-to-play-chess" target="_blank">How to play chess</a><br>
+    </div>
+  </div>
+
+  <div>
+    <!-- chart -->
   </div>
 
   <script src="script.js"></script>
-
 </body>
 
 </html>
